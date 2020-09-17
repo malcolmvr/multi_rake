@@ -30,9 +30,7 @@ Installation
 ------------
 .. code-block:: bash
 
-    pip install multi-rake
-
-If installation fails due to :code:`cld` error :code:`narrowing conversions`, than it can be installed with :code:`CFLAGS="-Wno-narrowing" pip install cld2-cffi` and than :code:`pip install multi-rake`
+    pip install nlp-rake
 
 Examples
 --------
@@ -155,13 +153,13 @@ Initialize rake object
 
 **min_freq** - minimum number of occurences of a phrase to be considered a keyword. *Default 1*
 
-**language_code** - provide language code as string to use built-in set of stopwords. See list of available languages. If language is not specified algorithm will try to determine language with `cld2 <https://pypi.org/project/cld2-cffi/>`_ and use corresponding set of built-in stopwords. *Default None*
+**language_code** - provide language code as string to use built-in set of stopwords. See list of available languages. If language is not specified algorithm will try to determine language with `langdetect <https://pypi.org/project/langdetect/>`_ and use corresponding set of built-in stopwords. *Default None*
 
 **stopwords** - provide own collection of stopwords (preferably as set, lowercased). Overrides :code:`language_code` if it was specified. *Default None*
 
 Keep :code:`language_code` and :code:`stopwords` as :code:`None` and stopwords will be generated from provided text.
 
-**lang_detect_threshold** - threshold for probability of detected language in `cld2 <https://pypi.org/project/cld2-cffi/>`_ (0-100). *Default 50*
+**lang_detect_threshold** - threshold for probability of detected language in `langdetect <https://pypi.org/project/langdetect/>`_ (0-100). *Default 50*
 
 **max_words_unknown_lang** - the same as :code:`max_words` but will be used if language is unknown and stopwords are generated from provided text. Usually the best result is obtained when specifically crafted set of stopwords is used, in case of its absence and usage of generated stopwords resulting keywords may not be as pretty and it may be good idea, for example, to produce 2-word keywords for unknown languages and 3-word keywords for languages with predefined sets of stopwords. *Default 2*
 
@@ -199,7 +197,7 @@ What is happening under the hood:
 
 1) if stopwords are specified, then they will be used
 2) if language is specified, then built-in stopwords for this language will be used, if there are no built-in stopwords --> 4
-3) if language is not specified, then `cld2 <https://pypi.org/project/cld2-cffi/>`_ will try to determine language --> 2
+3) if language is not specified, then `langdetect <https://pypi.org/project/langdetect/>`_ will try to determine language --> 2
 4) stopwords are generated from :code:`text` and :code:`text_for_stopwords`
 
 We generate stopwords by creating frequency distribution of words in text and filtering them with parameters :code:`generated_stopwords_percentile`, :code:`generated_stopwords_max_len`, :code:`generated_stopwords_min_freq`. We won't be able to generate them perfectly but it is rather easy to find articles and prepositions, because usually they consist of 3-4 characters and appear frequently. These stopwords, coupled with punctuation delimiters, enable us to get decent results for languages we don't understand.
