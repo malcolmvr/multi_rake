@@ -1,17 +1,17 @@
 Multilingual Rapid Automatic Keyword Extraction (RAKE) for Python
 =================================================================
 
-.. image:: https://travis-ci.org/vgrabovets/multi_rake.svg?branch=master
-    :target: https://travis-ci.org/vgrabovets/multi_rake
+.. image:: https://travis-ci.org/malcolmvr/nlp_rake.svg?branch=master
+    :target: https://travis-ci.org/malcolmvr/nlp_rake
 
 .. image:: https://img.shields.io/pypi/dm/multi_rake.svg
     :target: https://img.shields.io/pypi/dm/multi_rake
 
-.. image:: https://codecov.io/gh/vgrabovets/multi_rake/branch/master/graph/badge.svg
-  :target: https://codecov.io/gh/vgrabovets/multi_rake
+.. image:: https://codecov.io/gh/malcolmvr/nlp_rake/branch/master/graph/badge.svg
+  :target: https://codecov.io/gh/malcolmvr/nlp_rake
 
-.. image:: https://www.codefactor.io/repository/github/vgrabovets/multi_rake/badge
-   :target: https://www.codefactor.io/repository/github/vgrabovets/multi_rake
+.. image:: https://www.codefactor.io/repository/github/malcolmvr/nlp_rake/badge
+   :target: https://www.codefactor.io/repository/github/malcolmvr/nlp_rake
    :alt: CodeFactor
 
 Features
@@ -36,7 +36,7 @@ English text, we don't specify explicitly language nor list of stopwords (built-
 
 .. code-block:: python
 
-    from multi_rake import Rake
+    from nlp_rake import Rake
 
     text_en = (
         'Compatibility of systems of linear constraints over the set of '
@@ -130,7 +130,7 @@ Initialize rake object
 
 .. code-block:: python
 
-    from multi_rake import Rake
+    from nlp_rake import Rake
 
     rake = Rake(
         min_chars=3,
@@ -235,7 +235,7 @@ Development
 ----------------------------
 Repository has configured linter, tests and coverage.
 
-Create new virtual environment inside `multi_rake` folder in order to use it.
+Create new virtual environment inside `nlp_rake` folder in order to use it.
 
 .. code-block:: bash
 

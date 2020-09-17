@@ -13,7 +13,7 @@ with readme.open(mode='rt', encoding='utf-8') as fp:
     readme_text = fp.read()
 
 setup(
-    name='multi_rake',
+    name='nlp_rake',
     version='0.0.1',
     description='Multilingual Rapid Automatic Keyword Extraction (RAKE) for Python',  # noqa
     long_description=readme_text,
@@ -21,8 +21,8 @@ setup(
     license='MIT',
     author='Vitaliy Grabovets',
     author_email='vgithub@tryninja.io',
-    url='https://github.com/vgrabovets/multi_rake',
-    packages=find_packages(include=['multi_rake']),
+    url='https://github.com/malcolmvr/nlp_rake',
+    packages=find_packages(include=['nlp_rake']),
     python_requires='>=3.5.0',
     install_requires=install_requires,
     include_package_data=True,

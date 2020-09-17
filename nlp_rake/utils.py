@@ -1,5 +1,5 @@
-import cld2
 import regex
+from langdetect import detect_langs
 
 LETTERS_RE = regex.compile(r'\p{L}+')
 
@@ -11,13 +11,13 @@ SENTENCE_DELIMITERS_RE = regex.compile(
 
 
 def detect_language(text, proba_threshold):
-    _, _, details = cld2.detect(text)
-
-    language_code = details[0].language_code
-    probability = details[0].percent
-
-    if language_code != 'un' and probability > proba_threshold:
-        return language_code
+    try:
+        proba_t = (proba_threshold / 100)
+        for langprob in detect_langs(text):
+            if langprob.prob > proba_t:
+                return langprob.lang
+    except Exception:
+        return None
 
 
 def keep_only_letters(string):

@@ -1,8 +1,8 @@
 
 lint:
-	flake8 --show-source multi_rake
+	flake8 --show-source nlp_rake
 	flake8 --show-source tests
-	isort --check-only -rc multi_rake --diff
+	isort --check-only -rc nlp_rake --diff
 	isort --check-only -rc tests --diff
 
 test:

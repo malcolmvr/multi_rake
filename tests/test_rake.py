@@ -1,6 +1,6 @@
 import pytest
 
-from multi_rake import Rake
+from nlp_rake import Rake
 
 
 def test_rake():

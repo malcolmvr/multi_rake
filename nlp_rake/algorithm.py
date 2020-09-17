@@ -3,8 +3,8 @@ from collections import Counter, defaultdict
 
 import numpy as np
 
-from multi_rake.stopwords import STOPWORDS
-from multi_rake.utils import (
+from nlp_rake.stopwords import STOPWORDS
+from nlp_rake.utils import (
     detect_language, keep_only_letters, separate_words, split_sentences,
 )
 
@@ -36,7 +36,7 @@ class Rake:
             error_msg = (
                 'There are no built-in stopwords for {lang_code} language code!\n'  # noqa
                 'Possible solutions:\n'
-                '1. Check list of supported languages at https://github.com/vgrabovets/multi_rake\n'  # noqa
+                '1. Check list of supported languages at https://github.com/malcolmvr/nlp_rake\n'  # noqa
                 '2. Provide your own set of stopwords in stopwords argument\n'
                 '3. Leave arguments language_code and stopwords as None and '
                 'stopwords will be generated from provided text'.format(
