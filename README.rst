@@ -14,6 +14,10 @@ Multilingual Rapid Automatic Keyword Extraction (RAKE) for Python
    :target: https://www.codefactor.io/repository/github/malcolmvr/nlp_rake
    :alt: CodeFactor
 
+Forked
+--------
+Forked from https://github.com/vgrabovets/multi_rake and updated to replace the problematic cld2 language detection with langdetect.
+
 Features
 --------
 - Automatic keyword extraction from text written in any language
